@@ -1,0 +1,17 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "vit_s-container",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile"
+	},
+
+	// Jupyter Notebook을 실행할 수 있도록 포트 8888 개방
+	"forwardPorts": [8888],
+    "extensions": [
+        "ms-toolsai.jupyter"
+	],
+	// 컨테이너가 실행된 후 Jupyter Notebook 자동 실행
+	"postCreateCommand": "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
+}
