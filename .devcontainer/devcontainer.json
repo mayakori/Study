@@ -10,12 +10,11 @@
 		"--gpus=all",
 		"-p","8888:8888"
 	],
-	// Jupyter Notebook을 실행할 수 있도록 포트 8888 개방, vscode 확장프로그램 설치치
+	// Jupyter Notebook을 실행할 수 있도록 포트 8888 개방, vscode 확장프로그램 설치지지
 	"forwardPorts": [8888],
     "extensions": [
         "ms-toolsai.jupyter",
 		"ms-python.python"
-
 	],
 
 "postCreateCommand": "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
