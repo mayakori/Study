@@ -15,6 +15,8 @@
     "extensions": [
         "ms-toolsai.jupyter",
 		"ms-python.python"
+		"esbenp.prettier-vscode"
+		"ms-python.black-formatter"
 	],
 
 "postCreateCommand": "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
