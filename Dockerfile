@@ -11,13 +11,19 @@ RUN apt-get update && apt-get install -y \
 # .gitconfig 파일을 컨테이너 내부로 복사
 COPY .gitconfig /root/.gitconfig
 
+RUN pip3 install --upgrade pip
 # Install Python dependencies (PyTorch, Jupyter, and necessary dependencies)
 # 현재 하드코딩되어있지만 추후 버전관리시 requirements.txt 파일에 버전 명시해서 분리할것
-RUN pip3 install --upgrade pip
-RUN pip3 install jupyter notebook ipykernel\    
-    torch torchvision\
-    matplotlib opencv-python \
-    tensorflow
+# RUN pip3 install jupyter notebook ipykernel\    
+#     torch torchvision\
+#     matplotlib opencv-python \
+#     tensorflow
+
+# requirements.txt 파일을 컨테이너 내부로 복사
+COPY requirements.txt .
+# requirements.txt 사용, -r 옵션 통해 파일에서 목록 불러옴
+RUN pip3 install --no-cache-dir -r requirements.txt
+
 
 # Set environment variables for CUDA
 # 현재는 쿠다 cudnn 설치된 파이토치 이미지에 엔비디아 환경변수 넣고 여기다 텐서플로우 설치해서 gpu 활성화함
