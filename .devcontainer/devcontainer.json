@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
 {
-	"name": "vit_s-container",
+	"name": "Study-container",
 	"build": {
 		"context": "..",
 		"dockerfile": "../Dockerfile"
@@ -12,12 +12,16 @@
 	],
 	// Jupyter Notebook을 실행할 수 있도록 포트 8888 개방, vscode 확장프로그램 설치지지
 	"forwardPorts": [8888],
-    "extensions": [
-        "ms-toolsai.jupyter",
-		"ms-python.python"
-		"esbenp.prettier-vscode"
-		"ms-python.black-formatter"
-	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-toolsai.jupyter",
+				"ms-python.python",
+				"esbenp.prettier-vscode",
+				"ms-python.black-formatter"
+			]
+		}
+	},
 
 "postCreateCommand": "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
 }
