@@ -1,8 +1,11 @@
 jupyter
 notebook
 ipykernel
+
 torch
 torchvision
+
 matplotlib
 opencv-python
+
 tensorflow
