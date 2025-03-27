@@ -20,6 +20,8 @@
 				"esbenp.prettier-vscode",
 				"ms-python.black-formatter",
 				"michelemelluso.gitignore",
+				"usernamehw.errorlens",
+				"wix.vscode-import-cost"
 			]
 		}
 	},
