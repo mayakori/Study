@@ -12,6 +12,7 @@
 	],
 	// Jupyter Notebook을 실행할 수 있도록 포트 8888 개방, vscode 확장프로그램 설치지지
 	"forwardPorts": [8888],
+	
 	"customizations": {
 		"vscode": {
 			"extensions": [
