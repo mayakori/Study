@@ -19,8 +19,9 @@ COPY requirements.txt .
 
 # uv 사용해서 패키지 설치시
 # distroless uv 이미지로부터 필요 파일 복사해옴
+# ssh 연결을 통해 사용하기 위해선 추가적인 설정이 필요함
+# https://github.com/docker/cli/issues/4353
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
-# uv 설치 명령, 컨테이너 내부이므로 env 설정같은건 할 필요없음
 RUN uv pip install --system -r requirements.txt
 
 # Set environment variables for CUDA
@@ -29,5 +30,5 @@ RUN uv pip install --system -r requirements.txt
 ENV NVIDIA_VISIBLE_DEVICES=all
 ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 
-# Default command to run Jupyter Notebook
+# Default command to run Jupyter Notebooks
 CMD []
